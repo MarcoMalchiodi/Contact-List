@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New Contact</title>
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-text">Edit Contact</div>
+    </header>
+
+    <div id="form-container">
+        <form action="{{ url_for('edit', contact_id=contact.id) }}" method="post" id="edit-contact-form">
+            <div>
+                <label for="name">Name:</label><br>
+                <input type="text" name="name" class="name" value="{{ contact.name }}" required>
+            </div>
+
+            <div>
+                <label for="surname">Surname:</label><br>
+                <input type="text" name="surname" id="surname" value="{{ contact.surname }}" required>
+            </div>
+
+            <div>
+                <label for="birthdate">Date of Birth:</label><br>
+                <input type="date" name="birthdate" id="birthdate" value="{{ contact.birthday }}" required>
+            </div>
+
+            <div>
+                <label for="nationality">Nationality:</label><br>
+                <input type="text" name="nationality" id="nationality" value="{{ contact.nationality }}" required>
+            </div>
+
+            <div>
+                <label for="industry">Industry/Work Field:</label><br>
+                <input type="text" name="industry" id="industry" value="{{ contact.industry }}" required>
+            </div>
+
+            <div>
+                <label for="custom-tag1">Custom tag 1 (optional):</label><br>
+                <input type="text" name="custom-tag1" id="custom-tag" value="{{ contact.custom_tag1 }}"> 
+            </div>
+
+            <div>
+                <label for="custom-tag2">Custom tag 2 (optional):</label><br>
+                <input type="text" name="custom-tag2" id="custom-tag" value="{{ contact.custom_tag2 }}">
+            </div>
+
+            <div>
+                <label for="custom-tag3">Custom tag 3 (optional):</label><br>
+                <input type="text" name="custom-tag3" id="custom-tag" value="{{ contact.custom_tag3 }}">
+            </div>
+
+            <div><button type="submit" id="submit-btn">Edit Contact</button></div>
+
+        </form>
+    </div>
+    
+</body>
+</html>
